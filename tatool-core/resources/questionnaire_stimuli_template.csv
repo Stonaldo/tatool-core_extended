@@ -1,0 +1,5 @@
+ID;Dependency;Dependency Value;Image;Question;Type;Scale;Label;Value;Label;Value;Label;Value;Label;Value;Label;Value;Label;Value
+1;;;computerexperience_01.png;Offene Frage;open;0;;;;;;;;;;;;
+2;;;computerexperience_01.png;Ja/Nein Frage;dichot;2;Ja;1;Nein;0;;;;;;;;
+3;;;computerexperience_01.png;Skalen Frage;scale;3;1;1;2;2;3;3;;;;;;
+4;;;computerexperience_01.png;Instruktionen;none;0;;;;;;;;;;;;

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2011 Michael Ruflin, André Locher, Claudia von Bastian.
+  
+  This file is part of Tatool.
+  
+  Tatool is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published 
+  by the Free Software Foundation, either version 3 of the License, or 
+  (at your option) any later version.
+  
+  Tatool is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Lesser General Public License for more details.
+  
+  You should have received a copy of the GNU Lesser General Public License
+  along with Tatool. If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!-- 
+
+	Defines training creators
+
+	Note that the DefaultModuleCreatorRegistryHelper can clear existing creators if the default
+	creators should not be available in your app
+-->
+<beans>
+	<!--
+		Abstract bean definition, used for adding creators. Child bean definitions only need to define
+		the "creators" property.
+	-->
+    <bean id="DefaultModuleCreatorRegistryHelper" class="ch.tatool.core.module.creator.ModuleCreatorRegistryHelper" init-method="initialize" abstract="true">
+        <property name="moduleCreatorRegistry">
+        	<ref bean="DefaultModuleCreatorRegistry"/>
+        </property>
+    </bean>
+    
+    <!-- Example registration bean -->
+    <!-- 
+    <bean id="exampleCreator" parent="DefaultModuleCreatorRegistryHelper">
+        <property name="creators">
+            <list>
+                <ref bean="myCreator" />
+            </list>
+        </property>
+    </bean>
+     -->
+
+
+	<!--            -->
+	<!--  Creators  -->
+	<!--            -->
+	
+	
+	<!-- 
+		Default creators registration
+	 -->
+	<bean id="DefaultCreatorsRegistration" parent="DefaultModuleCreatorRegistryHelper">
+        <property name="creators">
+            <list>
+                <ref bean="LocalFileModuleCreator" />
+            </list>
+        </property>
+    </bean>
+    
+    <!-- Setup File Creator -->
+    <bean id="LocalFileModuleCreator" class="ch.tatool.core.module.creator.LocalFileModuleCreator">
+    </bean>
+
+</beans>
