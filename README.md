@@ -1,10 +1,12 @@
-Stacker
-=======
+Tatool Core 1.3.2 Source code
+========================
 
-Java implementation of a reflex stacking game.
+This is the Tatool-Core 1.3.2 package source code. There are occasions where I have 
+wanted to make changes to Tatools default behaviour, sometimes it was easily 
+achievable through extending one of tatools classes and writing my own with the 
+modified behaviours. However on occasion it is tricky and is much easier to just add 
+a method or two to one of the source classes.
 
-Base code initially taken from http://www.cawcoders.com/home/projects/stacker who provided the 
-simple game code openly. 
-
-I am making quite extensive edits/additions to improve and build on the funcitonality so that
-I may use it as a control task in my research.
+By compiling this into a JAR and then replacing the tatool-core 1.3.2 JAR that 
+lives in your repository with the newly compiled one you can then make use of 
+the additional functionality. 
